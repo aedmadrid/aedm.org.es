@@ -92,8 +92,9 @@ main {
     gap: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+@media (max-width: 850px) {
+    main {
+        width: 90%;
+        margin-top: 100px;
     }
 }
