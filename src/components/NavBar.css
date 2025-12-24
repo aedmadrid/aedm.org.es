@@ -1,74 +1,71 @@
 /* Desktop Navigation */
 .navbar-nav-desktop {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
 }
 
 .navbar-menu-btn {
-  display: none;
+    display: none;
 }
 
 /* Mobile Navigation */
-.navbar-nav-mobile {
-  position: fixed;
-  top: 80px;
-  left: 0;
-  width: 100vw;
-  background-color: rgba(253, 253, 253, 0.95);
-  backdrop-filter: blur(12px);
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 0;
-  z-index: 40;
-  animation: slideDown 0.3s ease-out;
-}
 
 .navbar-backdrop {
-  display: none;
+    display: none;
 }
 
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Mobile Styles - Below 768px */
 @media (max-width: 767px) {
-  .navbar-nav-desktop {
-    display: none;
-  }
+    .navbar-nav-desktop {
+        display: none;
+    }
 
-  .navbar-menu-btn {
-    display: flex;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 28px;
-    color: #36e452;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-  }
+    .navbar-menu-btn {
+        display: flex;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 28px;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        z-index: 600000;
+    }
 
-  .navbar-nav-mobile {
-    display: flex;
-  }
+    .navbar-nav-mobile {
+        display: flex;
+        flex-direction: column;
+        z-index: 50000000;
+        gap: 10px;
+        font-size: 24px;
+    }
 
-  .navbar-backdrop {
-    display: block;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 80px);
-    z-index: 35;
-  }
+    .navbar-backdrop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 80px;
+        z-index: 35;
+        background-color: #fdfdfd85;
+        backdrop-filter: blur(10px);
+        animation: slideDown 0.3s ease-out;
+    }
 }

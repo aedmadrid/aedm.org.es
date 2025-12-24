@@ -47,11 +47,8 @@ const NavBar: React.FC = () => {
           onClick={homeUrl}
         />
 
-        {/* NavBar Desktop - Hidden on mobile */}
-        <nav
-          className="navbar-nav-desktop"
-          aria-label="Navegación principal"
-        >
+        {/* NavBar Desktop  */}
+        <nav className="navbar-nav-desktop" aria-label="Navegación principal">
           <NavLink
             to="/"
             end
@@ -91,7 +88,7 @@ const NavBar: React.FC = () => {
           </NavLink>
         </nav>
 
-        {/* Mobile Menu Button - Visible only on mobile */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="navbar-menu-btn"
@@ -103,99 +100,55 @@ const NavBar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Menu - Visible only when open on mobile */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <nav
-          className="navbar-nav-mobile"
-          aria-label="Navegación móvil"
-        >
-          <NavLink
-            to="/"
-            end
-            onClick={handleNavClick}
-            style={({ isActive }) => ({
-              padding: "16px 20px",
-              borderBottom: "1px solid rgba(0,0,0,0.1)",
-              color: isActive ? "#36e452" : "inherit",
-              textDecoration: isActive ? "underline" : "none",
-              display: "block",
-            })}
-          >
-            Inicio
-          </NavLink>
-          <NavLink
-            to="/reclama"
-            onClick={handleNavClick}
-            style={({ isActive }) => ({
-              padding: "16px 20px",
-              borderBottom: "1px solid rgba(0,0,0,0.1)",
-              color: isActive ? "#36e452" : "inherit",
-              textDecoration: isActive ? "underline" : "none",
-              display: "block",
-            })}
-          >
-            Expone-Solicita
-          </NavLink>
-          <NavLink
-            to="/actividades"
-            onClick={handleNavClick}
-            style={({ isActive }) => ({
-              padding: "16px 20px",
-              borderBottom: "1px solid rgba(0,0,0,0.1)",
-              color: isActive ? "#36e452" : "inherit",
-              textDecoration: isActive ? "underline" : "none",
-              display: "block",
-            })}
-          >
-            Actividades
-          </NavLink>
-          <NavLink
-            to="/proyectos"
-            onClick={handleNavClick}
-            style={({ isActive }) => ({
-              padding: "16px 20px",
-              borderBottom: "1px solid rgba(0,0,0,0.1)",
-              color: isActive ? "#36e452" : "inherit",
-              textDecoration: isActive ? "underline" : "none",
-              display: "block",
-            })}
-          >
-            Proyectos
-          </NavLink>
-          <NavLink
-            to="/app"
-            onClick={handleNavClick}
-            style={({ isActive }) => ({
-              padding: "16px 20px",
-              borderBottom: "1px solid rgba(0,0,0,0.1)",
-              color: isActive ? "#36e452" : "inherit",
-              textDecoration: isActive ? "underline" : "none",
-              display: "block",
-            })}
-          >
-            App
-          </NavLink>
-          <NavLink
-            to="/contacto"
-            onClick={handleNavClick}
-            style={({ isActive }) => ({
-              padding: "16px 20px",
-              color: isActive ? "#36e452" : "inherit",
-              textDecoration: isActive ? "underline" : "none",
-              display: "block",
-            })}
-          >
-            Contacto
-          </NavLink>
-        </nav>
-      )}
-
-      {/* Mobile Menu Backdrop - Close menu on tap */}
-      {isMenuOpen && (
-        <div
-          onClick={() => setIsMenuOpen(false)}
-          className="navbar-backdrop"
-        />
+        <div onClick={() => setIsMenuOpen(false)} className="navbar-backdrop">
+          <nav className="navbar-nav-mobile" aria-label="Navegación móvil">
+            <NavLink
+              to="/"
+              end
+              onClick={handleNavClick}
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Inicio
+            </NavLink>
+            <NavLink
+              to="/reclama"
+              onClick={handleNavClick}
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Expone-Solicita
+            </NavLink>
+            <NavLink
+              to="/actividades"
+              onClick={handleNavClick}
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Actividades
+            </NavLink>
+            <NavLink
+              to="/proyectos"
+              onClick={handleNavClick}
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Proyectos
+            </NavLink>
+            <NavLink
+              to="/app"
+              onClick={handleNavClick}
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              App
+            </NavLink>
+            <NavLink
+              to="/contacto"
+              onClick={handleNavClick}
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Contacto
+            </NavLink>
+          </nav>
+        </div>
       )}
     </>
   );
