@@ -5,12 +5,14 @@ interface BotónProps {
   texto: string;
   enlace?: string;
   estilo?: string;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Botón: React.FC<BotónProps> = ({
   texto,
   enlace,
   estilo = "normal",
+  onClick,
 }) => {
   const navigate = useNavigate();
 
@@ -36,7 +38,10 @@ export const Botón: React.FC<BotónProps> = ({
   // Obtener el estilo correspondiente o usar el normal por defecto
   const estiloSeleccionado = estilosBoton[estilo] || estilosBoton.normal;
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (onClick) {
+      onClick(e);
+    }
     if (enlace?.startsWith("http")) {
       window.open(enlace, "_blank", "noopener,noreferrer");
     } else if (enlace) {
@@ -46,6 +51,7 @@ export const Botón: React.FC<BotónProps> = ({
 
   return (
     <button
+      type="button"
       style={{
         padding: 10,
         width: "100%",

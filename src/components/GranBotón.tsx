@@ -5,12 +5,21 @@ interface BotónProps {
   texto: string;
   enlace?: string;
   icono: string;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export const GranBotón: React.FC<BotónProps> = ({ texto, enlace, icono }) => {
+export const GranBotón: React.FC<BotónProps> = ({
+  texto,
+  enlace,
+  icono,
+  onClick,
+}) => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (onClick) {
+      onClick(e);
+    }
     if (enlace?.startsWith("http")) {
       window.open(enlace, "_blank", "noopener,noreferrer");
     } else if (enlace) {
@@ -20,6 +29,7 @@ export const GranBotón: React.FC<BotónProps> = ({ texto, enlace, icono }) => {
 
   return (
     <button
+      type="button"
       style={{
         padding: 18,
         width: "100%",

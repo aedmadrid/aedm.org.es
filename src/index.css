@@ -98,3 +98,78 @@ main {
         margin-top: 100px;
     }
 }
+
+label {
+    font-family: "DM Mono", monospace;
+    text-transform: uppercase;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #36e452;
+    background-color: #ffffff;
+    color: #040406;
+    font-family: DMMono, monospace;
+    font-size: 16px;
+    cursor: text;
+    outline: none;
+    transition: all 0.1s;
+    border-radius: 0;
+}
+
+.hChips {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.chip {
+    background-color: #36e452;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #000;
+    font-family: NeueMontreal, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.9em;
+    font-weight: 400;
+    transition: background-color 0.2s ease-in-out;
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #36e452;
+    background-color: #ffffff;
+    color: #040406;
+    font-family: DMMono, monospace;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    transition: all 0.1s;
+    border-radius: 0;
+}
+
+#firmaPad {
+    cursor: crosshair;
+    height: 200px;
+    width: calc(100% - 2px) !important;
+    border: 1px solid #36e452;
+}
+
+h3 {
+    font-family: NeueMontreal, sans-serif;
+    font-weight: 400;
+    font-size: 1.6em;
+    color: #040406;
+    margin: 20 0 10 0px;
+    font-weight: normal;
+    border-bottom: 2px solid #36e452;
+}
