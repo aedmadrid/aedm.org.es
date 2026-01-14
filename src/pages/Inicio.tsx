@@ -1,5 +1,6 @@
 import React from "react";
 import { Botón } from "../components/Botón";
+import { SubstackFeed } from "../components/SubstackFeed";
 
 const Inicio: React.FC = () => {
   return (
@@ -18,13 +19,22 @@ const Inicio: React.FC = () => {
         (ESD).
       </p>
       <p>Abajo tienes el enlace para ser soci@.</p>
-      <Botón enlace="https://www.instagram.com/aso.esd/" texto="Instagram" estilo="outline" />
+      <Botón
+        enlace="https://www.instagram.com/aso.esd/"
+        texto="Instagram"
+        estilo="outline"
+      />
       <Botón
         enlace="https://whatsapp.com/channel/0029VayuAlmISTkHVLfCc021"
         texto="WhatsApp"
         estilo="outline"
       />
       <Botón enlace="/asocia" texto="ASÓciate" />
+
+      <section style={{ marginTop: "2rem" }}>
+        <h2 style={{ marginBottom: "0.5rem", textAlign: "left" }}>Novedades</h2>
+        <SubstackFeed maxPosts={8} />
+      </section>
     </main>
   );
 };

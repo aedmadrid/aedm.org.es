@@ -31,7 +31,7 @@ const NavBar: React.FC = () => {
           height: 80,
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           alignItems: "center",
           paddingLeft: 20,
           paddingRight: 20,

@@ -51,9 +51,9 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    display: flex;
-    justify-content: center;
     font-family: "Neue Montreal", Arial, sans-serif;
+    width: 100%;
+    min-height: 100vh;
 }
 
 h1 {
@@ -84,9 +84,11 @@ code {
 
 main {
     text-align: left;
-    margin: 20px;
-    width: 800px;
-    margin-top: 130px;
+    width: 100%;
+    max-width: 800px;
+    margin: 130px auto 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -94,8 +96,8 @@ main {
 
 @media (max-width: 850px) {
     main {
-        width: 90%;
         margin-top: 100px;
+        padding: 0 16px;
     }
 }
 
@@ -172,4 +174,137 @@ h3 {
     margin: 20 0 10 0px;
     font-weight: normal;
     border-bottom: 2px solid #36e452;
+    scroll-margin-top: 130px;
+}
+
+.hclick {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.hclick--interactive {
+    cursor: pointer;
+}
+
+.hclick--interactive:focus-visible {
+    outline: 2px solid #040406;
+    outline-offset: 4px;
+}
+
+.hclick__text {
+    flex: 1;
+}
+
+.hclick__icon {
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+/* Substack Feed Masonry grid */
+.substack-feed-grid {
+    width: 100%;
+}
+
+.feed-card {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .feed-card {
+        width: calc(33.333% - 11px);
+    }
+}
+
+.aso-hashtag-scroller {
+    width: 100%;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.aso-hashtag-row-wrapper {
+    overflow: hidden;
+}
+
+.aso-hashtag-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 4px 0;
+    white-space: nowrap;
+}
+
+.aso-hashtag-row--animated:hover {
+    animation-play-state: paused;
+}
+
+.aso-hashtag-row--static {
+    animation: none !important;
+}
+
+.aso-hashtag-row--mobile {
+    flex-wrap: wrap;
+    white-space: normal;
+    justify-content: flex-start;
+}
+
+.aso-hashtag-pill {
+    background-color: #36e452;
+    padding: 8px 16px;
+    font-family: "Neue Montreal", sans-serif;
+    font-size: 0.9em;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    color: #040406;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.aso-hashtag-pill[data-clickable="false"] {
+    cursor: default;
+}
+
+.aso-hashtag-pill[data-clickable="true"]:hover,
+.aso-hashtag-pill[data-clickable="true"]:focus-visible {
+    transform: scale(1.05);
+}
+
+.aso-hashtag-pill:focus-visible {
+    outline: 2px solid #040406;
+    outline-offset: 2px;
+}
+
+@keyframes aso-hashtag-scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes aso-hashtag-scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .aso-hashtag-scroller[data-animation="static"] {
+        overflow: visible;
+    }
+
+    .aso-hashtag-scroller[data-animation="static"] .aso-hashtag-row-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+[data-reduced-motion="true"] .aso-hashtag-row--animated {
+    animation: none !important;
 }

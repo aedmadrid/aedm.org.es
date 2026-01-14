@@ -9,8 +9,10 @@ import { Lorem } from "./pages/Lorem";
 import { Asocia } from "./pages/Asocia";
 import { ASOapp } from "./pages/asoApp";
 import { Actividades } from "./pages/Actividades";
-
+import { Proyectos } from "./pages/Proyectos";
 import { Reclama } from "./pages/Reclama";
+import { Mercadillo } from "./pages/Mercadillo";
+import { MercadilloPlano } from "./pages/MercadilloPlano";
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
         <Route path="/app" element={<ASOapp />} />
         <Route path="/actividades" element={<Actividades />} />
         <Route path="/reclama" element={<Reclama />} />
+        <Route path="/mercadillo" element={<Mercadillo />} />
+        <Route path="/mercadillo/plano" element={<MercadilloPlano />} />
+        <Route path="/proyectos" element={<Proyectos />} />
       </Routes>
     </BrowserRouter>
   );
