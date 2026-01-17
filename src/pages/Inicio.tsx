@@ -38,7 +38,7 @@ const Inicio: React.FC = () => {
 
       <section style={{ marginTop: "2rem" }}>
         <h2 style={{ marginBottom: "0.5rem", textAlign: "left" }}>Novedades</h2>
-        <SubstackFeed maxPosts={8} />
+        <SubstackFeed maxPosts={9} />
       </section>
     </main>
   );
