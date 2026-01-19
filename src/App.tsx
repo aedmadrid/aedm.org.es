@@ -15,12 +15,27 @@ import { Reclama } from "./pages/Reclama";
 import { Mercadillo } from "./pages/Mercadillo";
 import { MercadilloPlano } from "./pages/MercadilloPlano";
 import { Footer } from "./components/footer";
+import CookieConsent from "react-cookie-consent";
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <NavBar />
+      <CookieConsent
+        location="bottom"
+        buttonText="Aceptar"
+        cookieName="cookieConsent"
+        style={{ background: "#2B373B", color: "#fff" }}
+        buttonStyle={{
+          color: "black",
+          fontSize: "14px",
+          background: "rgb(54, 228, 82)",
+        }}
+      >
+        Este sitio web utiliza cookies y Google Analytics para mejorar su
+        experiencia. Al continuar navegando, acepta el uso de estas tecnologías.
+      </CookieConsent>
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/contacto" element={<Contacto />} />

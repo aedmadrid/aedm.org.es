@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
+const GA_MEASUREMENT_ID = "G-BKX38RNZGX";
+
 const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Google Analytics gtag.js
+  useEffect(() => {
+    // Check if script is already loaded
+    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js"]`)) {
+      return;
+    }
+
+    // Load gtag.js async script
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+
+    // Initialize gtag
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    function gtag(...args: any[]) {
+      (window as any).dataLayer.push(args);
+    }
+    (window as any).gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID);
+  }, []);
 
   const activeStyle = {
     color: "#36e452",
