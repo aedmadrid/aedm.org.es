@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8d4d4f5c.css",
-    "main.js": "/static/js/main.389de823.js",
+    "main.js": "/static/js/main.c73ae5de.js",
     "static/js/453.3876b45d.chunk.js": "/static/js/453.3876b45d.chunk.js",
     "static/media/material-symbols-rounded.woff2": "/static/media/material-symbols-rounded.6d0c75eb1c6c0e835e30.woff2",
     "static/media/material-symbols-outlined.woff2": "/static/media/material-symbols-outlined.b52c518fa809b3fcaf15.woff2",
@@ -14,11 +14,11 @@
     "static/media/DMMono-Light.ttf": "/static/media/DMMono-Light.2cf6d0b2de012ff294ce.ttf",
     "index.html": "/index.html",
     "main.8d4d4f5c.css.map": "/static/css/main.8d4d4f5c.css.map",
-    "main.389de823.js.map": "/static/js/main.389de823.js.map",
+    "main.c73ae5de.js.map": "/static/js/main.c73ae5de.js.map",
     "453.3876b45d.chunk.js.map": "/static/js/453.3876b45d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8d4d4f5c.css",
-    "static/js/main.389de823.js"
+    "static/js/main.c73ae5de.js"
   ]
 }
