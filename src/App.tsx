@@ -19,25 +19,31 @@ import CookieConsent from "react-cookie-consent";
 import { TresEspacios } from "./pages/3espacios.notion";
 import { Museaso } from "./pages/museaso.notion";
 import PrivApp from "./pages/PrivApp";
+import { FiestAso } from "./pages/fiestaso.notion";
 function App() {
+  const isAsoApp = navigator.userAgent.includes("ASO.app 2");
+
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <NavBar />
-      <CookieConsent
-        location="bottom"
-        buttonText="Aceptar"
-        cookieName="cookieConsent"
-        style={{ background: "#2B373B", color: "#fff" }}
-        buttonStyle={{
-          color: "black",
-          fontSize: "14px",
-          background: "rgb(54, 228, 82)",
-        }}
-      >
-        Este sitio web utiliza cookies y Google Analytics para mejorar su
-        experiencia. Al continuar navegando, acepta el uso de estas tecnologías.
-      </CookieConsent>
+      {!isAsoApp && <NavBar />}
+      {!isAsoApp && (
+        <CookieConsent
+          location="bottom"
+          buttonText="Aceptar"
+          cookieName="cookieConsent"
+          style={{ background: "#2B373B", color: "#fff" }}
+          buttonStyle={{
+            color: "black",
+            fontSize: "14px",
+            background: "rgb(54, 228, 82)",
+          }}
+        >
+          Este sitio web utiliza cookies y Google Analytics para mejorar su
+          experiencia. Al continuar navegando, acepta el uso de estas
+          tecnologías.
+        </CookieConsent>
+      )}
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/contacto" element={<Contacto />} />
@@ -53,8 +59,9 @@ function App() {
         <Route path="/3espacios" element={<TresEspacios />} />
         <Route path="/museaso" element={<Museaso />} />
         <Route path="/privapp" element={<PrivApp />} />
+        <Route path="/fiestaso" element={<FiestAso />} />
       </Routes>
-      <Footer />
+      {!isAsoApp && <Footer />}
     </BrowserRouter>
   );
 }

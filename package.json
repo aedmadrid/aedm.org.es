@@ -31,10 +31,10 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "dev": "react-scripts start --watch",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "dev": "react-app-rewired start --watch",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -60,6 +60,7 @@
     "autoprefixer": "^10.4.23",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
+    "react-app-rewired": "^2.2.1",
     "tailwindcss": "^3.4.19"
   }
 }

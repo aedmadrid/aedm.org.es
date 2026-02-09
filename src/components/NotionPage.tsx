@@ -280,15 +280,12 @@ const renderBlocksGrouped = (blocks: NotionBlock[] = []): ReactNode[] => {
     i++;
   }
 
-  // Second pass: interleave with <br /> between groups (not after the last)
+  // Render groups without extra <br /> separators
   const out: ReactNode[] = [];
   for (let j = 0; j < groups.length; j++) {
     out.push(
       <React.Fragment key={groups[j].key}>{groups[j].content}</React.Fragment>,
     );
-    if (j < groups.length - 1) {
-      out.push(<br key={`br-${j}`} />);
-    }
   }
 
   return out;
